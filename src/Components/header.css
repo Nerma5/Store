@@ -4,3 +4,19 @@
     box-sizing: border-box;
 }
 
+.header{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color: rgb(134, 134, 134);
+}
+
+
+.header ul li{
+    display: inline-block;
+    justify-content: space-around;
+    text-align: center;
+    margin-inline: 2rem;
+}
+
