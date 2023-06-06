@@ -6,7 +6,7 @@ import Products from "./Components/Products";
 import MenClth from "./Components/MenClth";
 import WomenClth from "./Components/WomenClth";
 import Electronics from "./Components/Electronics";
-import Footer from "./Footer";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
