@@ -5,6 +5,7 @@ import Header from "./Components/Header";
 import Products from "./Components/Products";
 import MenClth from "./Components/MenClth";
 import WomenClth from "./Components/WomenClth";
+import Electronics from "./Components/Electronics";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Products />} />
         <Route path="/men" element={<MenClth />} />
         <Route path="/women" element={<WomenClth />} />
+        <Route path="/electronics" element={<Electronics />} />
       </Routes>
     </div>
   );
