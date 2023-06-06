@@ -1,14 +1,14 @@
-import React from "react";
 import axios from "axios";
+import {useState, useEffect } from "react";
+import './products.css'
 
-import { useState,useEffect } from "react";
 
 const Products = () =>{
 const [data, setData] = useState([])
 
 
 
-useEffect = (() => {
+useEffect(() => {
     const fetchApi = async () =>{
       try{
             const respone = await axios.get('https://fakestoreapi.com/products')
@@ -18,9 +18,10 @@ useEffect = (() => {
             console.log(err)
         }
     }
-
     fetchApi()
- },[])
+    
+},[])
+
     
     return(
         <>
