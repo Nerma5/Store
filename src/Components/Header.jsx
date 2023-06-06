@@ -37,7 +37,7 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                to="/woman"
+                to="/women"
                 style={({ isActive, isPending }) => {
                   return {
                     fontWeight: isActive ? "bold" : "",
@@ -45,7 +45,7 @@ const Header = () => {
                   };
                 }}
               >
-                Woman
+                Women
               </NavLink>
             </li>
 

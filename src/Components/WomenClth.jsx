@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import "./womanClth.css";
+import "./womenClth.css";
 
 const WomanClth = () => {
   const [data, setData] = useState([]);
