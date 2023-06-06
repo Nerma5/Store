@@ -6,6 +6,7 @@ import Products from "./Components/Products";
 import MenClth from "./Components/MenClth";
 import WomenClth from "./Components/WomenClth";
 import Electronics from "./Components/Electronics";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/women" element={<WomenClth />} />
         <Route path="/electronics" element={<Electronics />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
