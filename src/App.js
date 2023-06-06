@@ -7,13 +7,8 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <>
-      <Header/>
-      <Routes>
-        <Route exact path="/" element={<Products/>}/>
-
-      </Routes>
-
-      {/* <Products /> */}
+      {/* <Header/> */}
+      <Products />
     </>
   );
 }

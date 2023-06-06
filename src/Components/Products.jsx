@@ -24,7 +24,7 @@ useEffect(() => {
 
     
     return(
-        <>
+        <div className="mainDiv">
         {data.map(product =>(
             <div className="card">
                 <div key={product.id} className="images">
@@ -43,7 +43,7 @@ useEffect(() => {
 
             </div>
         ))}
-        </>
+        </div>
     )
 }
 
