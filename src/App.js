@@ -1,15 +1,18 @@
 import './App.css';
+import React from 'react';
+import { Route, Routes} from "react-router-dom";
 import Header from './Components/Header';
 import Products from './Components/Products';
-import { Route, Routes } from "react-router-dom";
 
 
 function App() {
   return (
-    <>
-      {/* <Header/> */}
-      <Products />
-    </>
+    <div className='app'>
+    <Header />
+    <Routes>
+      <Route path='/' element={<Products/>}/>
+    </Routes>
+    </div>
   );
 }
 

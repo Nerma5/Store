@@ -10,10 +10,11 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px 10% ;
-    background-color: rgb(81, 81, 187);
+    background-color: rgb(109, 109, 199);
 }
 
 nav li{
     display: inline-block ;
     padding: 0px 20px;
+    font-size: 20px;
 }
