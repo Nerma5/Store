@@ -12,12 +12,16 @@ useEffect(()=>{
         try{
             const res = await axios.get('https://fakestoreapi.com/products/category/mens%20clothing')
             setData(res.data)
+            console.log(res.data)
         }catch(err){
             console.log(err)
         }
     }
     fetchMen()
 },[])
+
+
+
     return(
         <div className="mainDiv">
             {data.map(product =>(
