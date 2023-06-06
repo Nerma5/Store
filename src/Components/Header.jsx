@@ -11,7 +11,7 @@ const Header = () =>{
                 <h1>Store</h1>
                 <nav>
                     <ul>
-                        <li>All products</li>
+                        <li>All producrs</li>
                         <li>Men</li>
                         <li>Woman</li>
                         <li></li>
