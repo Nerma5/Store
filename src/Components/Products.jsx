@@ -1,10 +1,21 @@
 import axios from "axios";
 import {useState, useEffect } from "react";
 import './products.css'
+import SearchBar from "./SearchBar";
 
 
 const Products = () =>{
 const [data, setData] = useState([])
+
+const[searchBar, setSearchBar] = useState('')
+
+const handleSearch = (s) =>{
+    setSearchBar(s)
+}
+
+const filteredData = data.filter((product) =>
+    product.title.toLowerCase().includes(searchBar.toLowerCase())
+)
 
 
 
@@ -24,8 +35,10 @@ useEffect(() => {
 
     
     return(
+        <>
+            <SearchBar handleSearch={handleSearch}  />
         <div className="mainDiv">
-        {data.map(product =>(
+        {filteredData.map(product =>(
             <div className="card">
                 <div key={product.id} className="images">
                     <img src={product.image} alt=""></img>
@@ -44,6 +57,7 @@ useEffect(() => {
             </div>
         ))}
         </div>
+        </>
     )
 }
 
