@@ -2,6 +2,7 @@ import axios from "axios";
 import {useState, useEffect } from "react";
 import './products.css'
 import SearchBar from "./SearchBar";
+import ProgressBar from "./ProgressBar";
 
 
 const Products = () =>{
@@ -35,6 +36,7 @@ useEffect(() => {
 
     return(
         <>
+            <ProgressBar/>
             <SearchBar handleSearch={handleSearch}  />
         <div className="mainDiv">
         {filteredData.map(product =>(
