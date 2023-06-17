@@ -21,9 +21,9 @@ const QueryReact = () => {
     );
   }
 
-  // if(isError){
-  //     return <div> Error: {error.message}</div>
-  // }
+  if(isError){
+      return <div> Error: {error.message}</div>
+  }
   return (
     <div>
       <h1>Products List</h1>
