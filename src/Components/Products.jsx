@@ -33,7 +33,6 @@ useEffect(() => {
     
 },[])
 
-    
     return(
         <>
             <SearchBar handleSearch={handleSearch}  />
