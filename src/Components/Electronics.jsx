@@ -1,28 +1,28 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
 import "./Electronics.css";
+import { useQuery } from "react-query";
 
+const fetchELec = async () => {
+    const res = await axios.get(
+      `https://fakestoreapi.com/products/category/electronics`
+    );
+    const data = res.data
+    return data
+}
 const Electronics = () => {
-  const [electronics, setElectronics] = useState([]);
+const{data,isLoading, isError, error} = useQuery("products", fetchELec)
 
-  const fetchELec = async () => {
-    try {
-      const res = await axios.get(
-        `https://fakestoreapi.com/products/category/electronics`
-      );
-      setElectronics(res.data);
-      console.log(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+if(isLoading){
+  return <>Loading..</>
+}
 
-  useEffect(() => {
-    fetchELec();
-  });
+if(isError){
+  return <>Error : {error.message}</>
+}
+
   return (
     <div className="mainDiv">
-      {electronics.map((product) => (
+      {data.map((product) => (
         <div className="card">
           <div key={product.id} className="images">
             <img src={product.image} alt=""></img>

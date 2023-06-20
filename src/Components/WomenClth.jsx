@@ -1,26 +1,30 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
 import "./womenClth.css";
+import {  useQuery } from "react-query";
+import { CircularProgress } from "@mui/material";
+import Box from "@mui/material/Box";
+
+
+const fetchWoman = async () => {
+    const res = await axios.get(
+      `https://fakestoreapi.com/products/category/women's%20clothing`
+    );
+    const data = res.data
+    return data
+  }
 
 const WomanClth = () => {
-  const [data, setData] = useState([]);
+const{data, isLoading, isError, error} = useQuery('products', fetchWoman)
 
-  const fetchWoman = async () => {
-    try {
-      const res = await axios.get(
-        `https://fakestoreapi.com/products/category/women's%20clothing`
-      );
-      setData(res.data);
-      console.log(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+if(isLoading){
+  return(<Box sx={{ display: "flex", }}>
+  <CircularProgress />
+</Box>)
+}
 
-  useEffect(() => {
-    fetchWoman();
-  }, []);
-
+if(isError){
+  return (<>Error :{error.message}</>)
+}
   return (
     <div className="mainDiv">
       {data.map((product) => (

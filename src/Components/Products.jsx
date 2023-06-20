@@ -1,11 +1,22 @@
 import axios from "axios";
-import {useState, useEffect } from "react";
+import {useState } from "react";
 import './products.css'
 import SearchBar from "./SearchBar";
+import { useQuery } from "react-query";
+import { CircularProgress } from "@mui/material";
+import Box from "@mui/material/Box";
 
+
+
+const fetchApi = async () =>{
+        const respone = await axios.get('https://fakestoreapi.com/products')
+        const data = respone.data
+        return data
+    
+}
 
 const Products = () =>{
-const [data, setData] = useState([])
+const{data, isLoading, isError,error} = useQuery('products' , fetchApi)
 
 const[searchBar, setSearchBar] = useState('')
 
@@ -16,22 +27,15 @@ const handleSearch = (s) =>{
 const filteredData = data.filter((product) =>
     product.title.toLowerCase().includes(searchBar.toLowerCase())
 )
-
-
-
-useEffect(() => {
-    const fetchApi = async () =>{
-      try{
-            const respone = await axios.get('https://fakestoreapi.com/products')
-            setData(respone.data)
-            console.log(respone.data)
-        }catch(err){
-            console.log(err)
-        }
+    if(isLoading){
+        return(<Box sx={{ display: "flex", }}>
+        <CircularProgress />
+      </Box>)
     }
-    fetchApi()
-    
-},[])
+
+    if(isError){
+        return <div> Error : {error.message}</div>
+    }
 
     return(
         <>
