@@ -12,7 +12,6 @@ const fetchApi = async () =>{
         const respone = await axios.get('https://fakestoreapi.com/products')
         const data = respone.data
         return data
-    
 }
 
 const Products = () =>{
